@@ -4,7 +4,7 @@ var rover = {
   direction: "N",
   x: 0,
   y: 0,
-  travelLog: null
+  travelLog: {}
 }
 // ======================
 function turnLeft(rover){
@@ -57,7 +57,7 @@ function turnRight(rover){
 
 function moveForward(rover){
   console.log("moveForward was called");
-  rover.travelLog += [rover.x,rover.y];
+  rover.travelLog.push([rover.x,rover.y]);
   switch (rover.direction) {
     case "N":
         if (rover.y > 0) {
@@ -85,7 +85,7 @@ function moveForward(rover){
 
 function moveBackwards(rover) {
   console.log("moveBackwards was called");
-  rover.travelLog += [rover.x,rover.y];
+  rover.travelLog.push([rover.x,rover.y])
   switch (rover.direction) {
     case "N":
       if (rover.y < 10) { 
